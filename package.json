@@ -1,0 +1,23 @@
+{
+  "name": "dorm-supplies-frontend",
+  "version": "0.0.0",
+  "author": "Bootcamp Class",
+  "private": true,
+  "scripts": {
+    "build": "npm install && grunt publish",
+    "dev": "grunt & node dorm-supplies-frontend.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "express": "~4.13.1",
+    "morgan": "~1.6.1",
+    "pug": "^2.0.0-beta6",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-stylus": "^1.2.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "uglify": "^0.1.5"
+  }
+}
