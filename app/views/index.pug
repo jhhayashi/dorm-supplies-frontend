@@ -1,0 +1,26 @@
+extends template
+
+block content
+    #navbar.right
+        .navbar-items-wrap
+            a(href='/register').quiet-link.navbar-item Register
+            .navbar-item(onclick='showModal()') Login
+    .modal#login-form
+        .modal-content
+            form.form
+                h1.form-title Login
+                #js-error-message.error-message
+                input.form-input(type='email' name='email' placeholder='Email')
+                input.form-input(type='password' name='password' placeholder='Password')
+                button.form-input.button(type='button') Login
+                p Or #[a(href='') register] for an account
+    h1.title.center Welcome to HSA Dorm Supplies Shop
+    #items
+        each item in items
+            .item
+                .item-img-wrap
+                    img.item-img(src= item.img || config.defaultImg)
+                .item-info-wrap
+                    .item-name= item.name
+                    .item-price= '$' + item.price
+                    .item-buy-button.button.button-inline Buy
