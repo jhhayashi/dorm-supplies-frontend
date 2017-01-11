@@ -1,0 +1,22 @@
+extends template
+
+block content
+    form.form
+        if success
+            h1.form-title Success!!
+        else if error
+            h1.form-title Error!!
+        else
+            h1.form-title Add Item
+        #js-error-message.error-message
+        input.form-input(type='text' name='name' placeholder='Name'
+            required)
+        input.form-input(type='text' name='img' placeholder='Image URL')
+        input.form-input(type='text' name='description'
+            placeholder='Description')
+        input.form-input.half(type='number' name='price' placeholder='Price'
+            required)
+        input.form-input.half(type='number' name='inventory'
+            placeholder='Inventory')
+        input.hidden(type='text' name='id')
+        button.form-input.button(type='button' onclick='submitItem()') Submit
