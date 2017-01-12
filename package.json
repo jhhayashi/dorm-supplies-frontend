@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "build": "npm install && grunt publish",
-    "dev": "grunt & nodemon dorm-supplies-frontend.js"
+    "dev": "grunt & nodemon dorm-supplies-frontend.js",
+    "windows": "grunt publish && node dorm-supplies-frontend.js"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -17,8 +18,9 @@
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
-    "grunt": "^1.0.1",
+    "grunt": "^0.4.5",
     "grunt-contrib-stylus": "^1.2.0",
+    "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "uglify": "^0.1.5"
   }
