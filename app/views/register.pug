@@ -1,0 +1,21 @@
+extends template
+
+block content
+    #navbar.left
+        .navbar-items-wrap
+            a(href='/').quiet-link.navbar-item < Home
+    form.form
+        h1.form-title Register Account
+        #js-error-message.error-message
+        input.form-input.half(type='text' name='firstName' placeholder='First name')
+        input.form-input.half(type='text' name='lastName' placeholder='Last name')
+        input.form-input(type='email' name='email' placeholder='Email' required
+            onfocus='clearError(this, true)' onblur='validateElement(this, true)'
+            data-regex='^.+@(.+\.)?harvard.edu' data-message="Please enter valid Harvard email")
+        input.form-input(type='password' name='password' placeholder='Password'
+            required onfocus='clearError(this)' onblur='validateElement(this, true)'
+            data-message='Please enter password')
+        input.form-input(type='password' name='passwordConfirm' 
+            placeholder='Confirm Password' required onfocus='clearError(this)'
+            onblur='validateElement(this, true)' data-message='Please confirm password')
+        button.form-input.button(type='button' onclick='register()') Register

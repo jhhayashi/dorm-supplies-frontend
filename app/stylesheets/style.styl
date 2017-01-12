@@ -1,7 +1,11 @@
 @require "helpers"
 
+text-color = #000
+button-color = rgb(200, 200, 200)
+button-color-transparent = rgba(200, 200, 200, .7)
+button-color-transparent-alt = rgb(220, 220, 220) 
 mobile-width = 600px
-text-color = black
+default-border = 1px solid #888
 
 *
     box-sizing border-box
@@ -21,6 +25,33 @@ html, body
 .center
     text-align center
 
+.button
+    margin 0 auto
+    width auto
+    min-width 20%
+    padding 20px
+    border-radius 5px
+    border 0
+    background-color button-color
+    cursor pointer
+.button:hover
+    background-color button-color-transparent-alt
+    background-color button-color-transparent
+.button-inline
+    display inline-block
+    text-align center
+    margin .7rem 1rem
+
+.error
+    color red
+    font-weight bold
+.warning
+    color white
+    background-color #d00
+.warning:hover
+    background-color #f00
+
+
 #navbar
     background-color #ddd
 .navbar-item-wrap
@@ -31,11 +62,99 @@ html, body
     padding 1rem
     text-align center
 .navbar-item:hover
+    background-color button-color-transparent-alt
+    background-color button-color-transparent
     cursor pointer
 @media only screen and (min-width: mobile-width)
     .navbar-item
         display inline-block
-        
+
+#items
+    flexbox()
+    flex-direction row
+    flex-wrap wrap
+    justify-content space-around
+    align-items flex-start
+    align-content flex-start
+
+.item
+    width 90%
+    max-width 400px
+    margin-bottom 2rem
+    border default-border
+    border-radius 5px
+    text-align center
+.item-img
+    width 100%
+.item-info-wrap
+    padding 0 1rem
+.item-name
+    font-weight bold
+    font-size 1.7rem
+.item-price
+    font-style italic
+    font-size 1.2rem
+.item-buy-button
+    width 40%
+
+.add-item
+    height 400px
+    line-height 400px
+    background-color button-color
+.add-item:hover
+    background-color button-color-transparent-alt
+    background-color button-color-transparent
+    cursor pointer
+
+.user
+    width 95%
+    max-width 1080px
+    margin 0 auto 1rem auto
+    border default-border
+    border-radius 5px
+    text-align center
+.user-email
+    padding-top 1rem
+    font-weight bold
+    font-size 1.2rem
+.user-button
+    width 16%
+    min-width 150px
+    margin .5rem 2%
+@media only screen and (min-width: mobile-width)
+    .user-email
+        display inline-block
+        width 60%
+        text-align left
+        padding-left 2%
+        padding-top 0
+    .user-button
+        min-width 0
+
+.pending-user
+    max-width 95%
+    max-width 1080px
+    margin 0 auto 1rem auto
+    border default-border
+    border-radius 5px
+    text-align center
+    background-color #f3f3f3
+.pending-user-email
+    margin-top .5rem
+.pending-wrap
+    padding 0 1rem
+    flexbox()
+    flex-wrap wrap
+    justify-content space-around
+    align-content flex-start
+.pending
+    margin-bottom 1rem
+    border default-border
+    border-radius 5px
+    background white
+.pending-item
+    margin .5rem 0
+
 .form
     width 90%
     max-width 600px

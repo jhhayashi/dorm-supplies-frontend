@@ -1,22 +1,31 @@
 extends template
 
 block content
-    form.form
-        if success
-            h1.form-title Success!!
-        else if error
-            h1.form-title Error!!
-        else
-            h1.form-title Add Item
-        #js-error-message.error-message
-        input.form-input(type='text' name='name' placeholder='Name'
-            required)
-        input.form-input(type='text' name='img' placeholder='Image URL')
-        input.form-input(type='text' name='description'
-            placeholder='Description')
-        input.form-input.half(type='number' name='price' placeholder='Price'
-            required)
-        input.form-input.half(type='number' name='inventory'
-            placeholder='Inventory')
-        input.hidden(type='text' name='id')
-        button.form-input.button(type='button' onclick='submitItem()') Submit
+    #navbar.right
+        .navbar-items-wrap
+            a(href='/').quiet-link.navbar-item Home
+            a(href='/admin/users').quiet-link.navbar-item Manage Users
+            a(href='/admin/pending').quiet-link.navbar-item Manage Orders 
+            a(href='/logout').quiet-link.navbar-item Logout
+    .modal
+        .modal-content
+            form.form
+                h1.form-title Add Item
+                #js-error-message.error-message
+                input.form-input(type='text' name='name' placeholder='Name'
+                    required)
+                input.form-input(type='text' name='img' placeholder='Image URL')
+                input.form-input(type='text' name='description'
+                    placeholder='Description')
+                input.form-input.half(type='number' name='price' placeholder='Price'
+                    required)
+                input.form-input.half(type='number' name='inventory'
+                    placeholder='Inventory')
+                input.hidden(type='text' name='id')
+                button.form-input.button(type='button' onclick='submitItem()') Submit
+    h1.title.center Manage Items
+    #items
+        .item.add-item(onclick='showAddItem()') + Add Item
+    script var defaultImg= '#{config.defaultImg}';
+block postscript
+    script fetchItems();

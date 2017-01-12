@@ -1,0 +1,13 @@
+extends template
+
+block content
+    #navbar.right
+        .navbar-item-wrap
+            a(href='/').quiet-link.navbar-item Home
+            a(href='/admin/pending').quiet-link.navbar-item Manage Orders 
+            a(href='/admin/items').quiet-link.navbar-item Manage Items
+            a(href='/logout').quiet-link.navbar-item Logout
+    h1.title.center Manage Users
+    #js-users
+block postscript
+    script fetchUsers();

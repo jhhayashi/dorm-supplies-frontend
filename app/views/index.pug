@@ -10,11 +10,23 @@ block content
             form.form
                 h1.form-title Login
                 #js-error-message.error-message
-                input.form-input(type='email' name='email' placeholder='Email')
-                input.form-input(type='password' name='password' placeholder='Password')
-                button.form-input.button(type='button') Login
-                p Or #[a(href='') register] for an account
+                input.form-input(type='email' name='email' placeholder='Email'
+                    required)
+                input.form-input(type='password' name='password' placeholder='Password'
+                    required)
+                button.form-input.button(type='button' onclick='login()') Login
+                p Or #[a(href='/register') register] for an account
     h1.title.center Welcome to HSA Dorm Supplies Shop
     #items
         each item in items
-            li there should be an item here
+            .item
+                .item-img-wrap
+                    img.item-img(src= item.img || config.defaultImg)
+                .item-info-wrap
+                    .item-name= item.name
+                    .item-price= '$' + item.price
+                    .item-buy-button.button.button-inline(
+                        onclick='buy("' + item._id + '")') Buy
+
+block postscript
+    script if (localStorage.token) loginInit(JSON.parse(atob(localStorage.token.split('.')[1])));

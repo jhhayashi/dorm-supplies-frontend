@@ -1,14 +1,15 @@
 {
-  "name": "dorm-supplies-frontend",
+  "name": "hsa-dorm-supplies-frontend",
   "version": "0.0.0",
-  "author": "Bootcamp Class",
+  "author": "Jordan Hayashi <jhhayashi@gmail.com>",
   "private": true,
   "scripts": {
     "build": "npm install && grunt publish",
-    "dev": "grunt & node dorm-supplies-frontend.js"
+    "dev": "grunt & nodemon dorm-supplies-frontend.js"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
     "express": "~4.13.1",
     "morgan": "~1.6.1",
     "pug": "^2.0.0-beta6",
